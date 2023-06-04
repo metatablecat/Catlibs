@@ -1,0 +1,10 @@
+{
+	"languageMode": "nonstrict",
+	"lint": {
+		"LocalShadow": false,
+		"SameLineStatement": false,
+		"LocalUnused": false,
+		"FunctionUnused": false,
+		"ImportUnused": false
+	}
+}

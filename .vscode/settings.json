@@ -1,0 +1,19 @@
+{
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"files.associations": {
+		".luaurc": "json"
+	},
+
+	"editor.rulers": [80],
+	// todo: support .luaurc schema
+
+	"json.schemas": [
+    {
+        "fileMatch": [
+            "/.luaurc"
+        ],
+        "url": "./.vscode/luaurc.json"
+    }
+]
+}
