@@ -1,16 +1,8 @@
 --!strict
 -- Action
 
-export type Action<I..., O...> = {
-	_signal: (I...) -> O...,
-	_threads: {[thread]: thread},
-	Name: string,
-	await: (Action<I..., O...>, I...) -> (boolean, O...),
-	cancel: (Action<I..., O...>, optmsg: string?) -> (),
-
-	handleAsync: (Action<I..., O...>, func: (boolean, O...) -> (), I...) -> ()
-}
-
+local Types = require(script.Parent.Types)
+type Action<I..., O...> = Types.Action<I..., O...> 
 type ErrorType = "LuaError"|"Cancelled"
 -- AwaitHandler (not AsyncHandler, thats a little nicer)
 local function handler<I..., O...>(action: Action<I..., O...>, f, ...)

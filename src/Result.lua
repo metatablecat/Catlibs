@@ -1,25 +1,8 @@
-export type Ok<T> = {
-	IsOk: true,
-	Ok: T,
-}
-
-export type Err<T> = {
-	IsOk: false,
-	Err: T
-}
-
-export type OkErr<O, E> = Ok<O>|Err<E>
-
-export type Result<O, E> = {
-	Ok: (Result<O, E>, ok: O) -> Ok<O>,
-	Err: (Result<O, E>, err: E) -> Err<E>,
-	FromLuaError: (Result<O, E>, msg: string) -> Err<E>,
-	FromPcall: <A...>(
-		Result<O, E>,
-		f: (A...) -> O,
-		A...
-	) -> OkErr<O, E>
-}
+local Types = require(script.Parent.Types)
+type Ok<T> = Types.Ok<T>
+type Err<T> = Types.Err<T>
+type OkErr<O, E> = Types.OkErr<O, E>
+type Result<O, E> = Types.Result<O, E>
 
 type matches<E> = {
 	default: E?,

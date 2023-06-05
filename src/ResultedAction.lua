@@ -7,22 +7,13 @@
 		.handleAsync -> OkErr<>
 ]]--
 
+local Types = require(script.Parent.Types)
 local Result = require(script.Parent.Result)
 local Action = require(script.Parent.Action)
 
-type Result<O, E> = Result.Result<O, E>
-type Action<A..., O...> = Action.Action<A..., O...>
-
-type ResultedAction<O, E, A...> = {
-	_action: Action<(Result<O, E>, A...), (Result.OkErr<O, E>)>,
-	_result: Result<O, E>,
-	await: (ResultedAction<O, E, A...>, A...) -> Result.OkErr<O, E>,
-	handleAsync: (
-		ResultedAction<O, E, A...>,
-		callback: (Result.OkErr<O, E>) -> (),
-		A...
-	) -> ()
-}
+type Result<O, E> = Types.Result<O, E>
+type Action<A..., O...> = Types.Action<A..., O...>
+type ResultedAction<O, E, A...> = Types.ResultedAction<O, E, A...>
 
 local function ResultedAction<O, E, A...>(
 	actionName: string, 
@@ -37,8 +28,8 @@ local function ResultedAction<O, E, A...>(
 	r._action = Action(actionName, f)
 	r._result = Result(errors)
 
-	function r.await(self: ResultedAction<O, E, A...>, ...: A...): Result.OkErr<O, E>
-		local action: Action<(Result<O, E>, A...), (Result.OkErr<O, E>)> = self._action
+	function r.await(self: ResultedAction<O, E, A...>, ...: A...): Types.OkErr<O, E>
+		local action: Action<(Result<O, E>, A...), (Types.OkErr<O, E>)> = self._action
 		local result: Result<O, E> = self._result
 
 		local s, rState, rReturn = action:await(result, ...)
@@ -49,8 +40,8 @@ local function ResultedAction<O, E, A...>(
 		return rState
 	end
 
-	function r.handleAsync(self: ResultedAction<O, E, A...>, callback: (Result.OkErr<O, E>) -> (), ...: A...)
-		local action: Action<(Result<O, E>, A...), (Result.OkErr<O, E>)> = self._action
+	function r.handleAsync(self: ResultedAction<O, E, A...>, callback: (Types.OkErr<O, E>) -> (), ...: A...)
+		local action: Action<(Result<O, E>, A...), (Types.OkErr<O, E>)> = self._action
 		local result: Result<O, E> = self._result
 
 		action:handleAsync(function(s, rState, rReturn)
