@@ -5,7 +5,7 @@
 
 ## Usage
 CatLibs currently exports the following libraries:
-* Action - an asynchronous thread manager thats 	nicer than using `coroutine` or `task`
+* Action - an asynchronous thread manager thats nicer than using `coroutine` or `task`
 * Result - a Rust-like `Result` implementation
 * Util - various utility functions
 
