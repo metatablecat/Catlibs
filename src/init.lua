@@ -10,5 +10,6 @@ export type ResultedAction<O, E, A...> = Types.ResultedAction<O, E, A...>
 return {
 	Action = require(script.Action),
 	Result = require(script.Result),
+	ResultedAction = require(script.ResultedAction),
 	Util = require(script.Util)
 }
