@@ -3,6 +3,12 @@
 <p>Useful helper libraries for Roblox</p>
 </div>
 
+## Additions
+
+CatLibs is an early alpha release, feel free to add your own ideas to the issues section.
+
+Current ideas are available in the [TODO.md](TODO.md) file
+
 ## Usage
 CatLibs currently exports the following libraries:
 * Action - an asynchronous thread manager thats nicer than using `coroutine` or `task`
