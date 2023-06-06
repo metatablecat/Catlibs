@@ -16,7 +16,5 @@ Util.string = require(script.String)
 Util.TAU = 6.283185307179586
 
 -- Functions
-
-
 table.freeze(Util)
 return Util

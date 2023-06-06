@@ -11,6 +11,19 @@ export type Action<I..., O...> = {
 	handleAsync: (Action<I..., O...>, func: (boolean, O...) -> (), I...) -> ()
 }
 
+-- Event.lua
+export type Signal<A...> = {
+	Connect: (Signal<A...>, func: (A...) -> ()) -> () -> (),
+	ConnectedFunctions: {(A...) -> ()},
+	Wait: (Signal<A...>) -> A...,
+	WaitingThreads: {thread}
+}
+
+export type Event<A...> = {
+	Signal: Signal<A...>,
+	Fire: (Event<A...>, A...) -> (),
+}
+
 -- Result.lua
 export type Ok<T> = {
 	IsOk: true,
@@ -33,18 +46,6 @@ export type Result<O, E> = {
 		f: (A...) -> O,
 		A...
 	) -> OkErr<O, E>
-}
-
--- ResultedAction.lua
-export type ResultedAction<O, E, A...> = {
-	_action: Action<(Result<O, E>, A...), (OkErr<O, E>)>,
-	_result: Result<O, E>,
-	await: (ResultedAction<O, E, A...>, A...) -> OkErr<O, E>,
-	handleAsync: (
-		ResultedAction<O, E, A...>,
-		callback: (OkErr<O, E>) -> (),
-		A...
-	) -> ()
 }
 
 -- Util doesn't export types
