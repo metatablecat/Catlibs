@@ -1,0 +1,6 @@
+{
+	"name": "CatLibsRuntime",
+	"tree": {
+		"$path": "src"
+	}
+}

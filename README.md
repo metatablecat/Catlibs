@@ -7,14 +7,16 @@
 
 CatLibs is an early alpha release, feel free to add your own ideas to the issues section.
 
-## Usage
-CatLibs currently exports the following libraries:
-* Action - an asynchronous thread manager thats nicer than using `coroutine` or `task`
-* Result - a Rust-like `Result` implementation
-* ResultedAction - a wrapper that combines Action and Result
-* Util - various utility functions
+## lib-base
+`Version 0.2`
+Exports basic objects used in CatLibs
+* Action - asynchronous thread handler that makes coroutines nicer to work with
+* Event - custom signal class
+* Result - Rust-like error handler class
 
----
+## lib-ext
+`Verison 0.0`
+Exports extensions upon `lib-base`. Currently still be implemented
 
 ## Attribution
 

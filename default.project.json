@@ -1,6 +1,20 @@
 {
-	"name": "CatLibsPackage",
+	"name": "CatLibs Development",
 	"tree": {
-		"$path": "src"
+		"$className": "DataModel",
+		"ReplicatedFirst": {
+			"CatLibs": {
+				"$className": "Folder",
+				"Base": {
+					"$path": "lib-base/src"
+				},
+				"Extensions": {
+					"$path": "lib-ext/src"
+				},
+				"Runtime": {
+					"$path": "lib-runner/src"
+				}
+			}
+		}
 	}
 }
