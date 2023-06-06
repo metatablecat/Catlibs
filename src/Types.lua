@@ -14,7 +14,7 @@ export type Action<I..., O...> = {
 -- Event.lua
 export type Signal<A...> = {
 	Connect: (Signal<A...>, func: (A...) -> ()) -> () -> (),
-	ConnectedFunctions: {(A...) -> ()},
+	ConnectedFunctions: {[(A...) -> ()]: boolean},
 	Wait: (Signal<A...>) -> A...,
 	WaitingThreads: {thread}
 }
