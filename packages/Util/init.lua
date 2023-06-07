@@ -1,7 +1,11 @@
 -- util acts as a container for useful unassociated functions
 -- Most of this file is constants and helper functions
-
+local Package = require(script.Parent.Package)
 local Util = {}
+local UtilPackage = Package(Util, {
+	Name = "Util",
+	Version = "0.1.0"
+})
 
 -- Subsections
 Util.table = require(script.Table)
@@ -16,5 +20,4 @@ Util.string = require(script.String)
 Util.TAU = 6.283185307179586
 
 -- Functions
-table.freeze(Util)
-return Util
+return UtilPackage()

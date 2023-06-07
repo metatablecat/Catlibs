@@ -1,6 +1,6 @@
 {
 	"name": "CatLibs",
 	"tree": {
-		"$path": "src"
+		"$path": "packages"
 	}
 }
