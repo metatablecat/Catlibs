@@ -1,4 +1,5 @@
 {
+	"globIgnorePaths": ["packages/ExamplePackage"],
 	"name": "CatLibs",
 	"tree": {
 		"$path": "packages"
