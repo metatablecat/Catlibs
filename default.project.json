@@ -1,7 +1,15 @@
 {
-	"globIgnorePaths": ["packages/ExamplePackage"],
+	"globIgnorePaths": ["src/ExamplePackage"],
 	"name": "CatLibs",
 	"tree": {
-		"$path": "packages"
+		"$className": "DataModel",
+
+		"ReplicatedFirst": {
+			"$className": "ReplicatedFirst",
+
+			"Catlibs": {
+				"$path": "src"
+			}
+		}
 	}
 }

@@ -1,10 +1,5 @@
-local Package = require(script.Parent.Package)
 local Types = require(script.Types)
 local TabbyCoreLib = {}
-local TabbyCoreLibPackage = Package(TabbyCoreLib, {
-	Name = "TabbyCoreLib",
-	Version = "1.1.0"
-})
 
 TabbyCoreLib.Action = require(script.Action)
 export type Action<A..., R...> = Types.Action<A..., R...>
@@ -19,4 +14,4 @@ export type Err<E> = Types.Err<E>
 export type OkErr<O, E> = Types.OkErr<O, E>
 export type Result<O, E> = Types.Result<O, E>
 
-return TabbyCoreLibPackage()
+return TabbyCoreLib

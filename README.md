@@ -1,19 +1,20 @@
 <div align=center>
 <h1>CatLibs 🐈</h1>
-<p>Useful helper libraries for Roblox</p>
+<p>ScriptModule based game framework for Roblox</p>
 </div>
 
-## Additions
-CatLibs is an early alpha release, feel free to add your own ideas to the issues section.
+# Usage
+CatLibs (as an engine), loads `ModuleScripts` with the `ScriptModule` tag. It should
+realistically be placed in `ReplicatedFirst` such that you can implement all sorts of
+loading behaviour
 
-## Attribution
+This allows you to create ModuleScripts that behave like scripts. You can also
+disabe ScriptModules by adding an `Enabled` tag and setting it to false.
 
-If you use this in your project, please add valid attribution if possible
+# Libraries
+Under the `Libs` folder lives the main library sourcecode behind CatLibs. If you want
+CatLibs just for the libraries, you can remove the `Engine` and export this into
+`ReplicatedStorage` as a package.
 
-```md
-This project uses CatLibs by metatablecat. [Source Code](https://github.com/tfilteredc/catlibs)
-```
-
-> **DO NOT LINK TO THE SOURCE CODE IN ANY ROBLOX GAME. THIS LEAVES A HIGH RISK THAT YOU AND/OR YOUR GAME WILL BE BANNED FOR EXTERNAL LINK POLICY**
 
 metatablecat 2023

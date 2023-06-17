@@ -37,13 +37,6 @@ local LOAD_FROM = {
 
 local LOG_PREFIX = "[ScriptModule]:"
 
-local Package = require(script.Parent.Package)
-local ScriptModule = {}
-local ScriptModulePackage = Package(ScriptModule, {
-	Name = "ScriptModule",
-	Version = "0.1.0"
-})
-
 local function BAD_LOAD(modName, msg, hint)
 	if hint then
 		msg ..= `\n  - {hint}`
@@ -119,7 +112,7 @@ local function CollectionServiceTagHandler(inst: Instance)
 	end
 end
 
-function ScriptModule.run()
+return function()
 	LOGPOINT("CatLibs ScriptModule Loader - metatablecat 2023")
 
 	CollectionService:GetInstanceAddedSignal(SCRIPT_MODULE_TAG):Connect(CollectionServiceTagHandler)
@@ -129,5 +122,3 @@ function ScriptModule.run()
 
 	LOGPOINT("Done loading")
 end
-
-return ScriptModulePackage()
